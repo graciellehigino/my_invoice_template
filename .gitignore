@@ -5,6 +5,7 @@
 # Session Data files
 .RData
 .RDataTmp
+._*
 
 # User-specific files
 .Ruserdata
@@ -51,3 +52,5 @@ rsconnect/
 
 # invoices output folder
 invoices/
+*.pdf
+*.html

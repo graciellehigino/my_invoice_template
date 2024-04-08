@@ -1,12 +1,10 @@
 ---
-title: |
-  ![](images/logo.png){width=80px}  
-  Invoice
-format:
-  pdf:
-    include-in-header:
-      text: |
-        \addtokomafont{disposition}{\rmfamily}
+project:
+  output-dir: invoices/
+format: 
+  pdf: 
+    fontfamily: Chivo
+    mainfont: Chivo
 execute: 
   echo: TRUE
   warning: FALSE
@@ -19,11 +17,15 @@ execute:
 knitr::opts_chunk$set(echo = FALSE)
 library(tidyverse)
 library(showtext)
+library(scales)
 options(tinytex.verbose = TRUE)
-source("01-data_wrangling.R")
-source("02-create_table.R")
+source("code/01-data_wrangling.R")
+source("code/02-create_table.R")
 ```
 
+:::{.logo}
+![]("assets/logo.png")
+:::
 
 :::: {layout-ncol="2"}
 :::{}

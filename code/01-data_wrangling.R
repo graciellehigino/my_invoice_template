@@ -23,7 +23,7 @@ service_data <- raw_service_data
 
 # Data wrangling -----------------------------------------------------------
 
-source("summarize_services.R")
+source("code/summarize_services.R")
 service_data <- summarize_invoice(service_data, 1)
 
 customer_data <- customer_data |> 

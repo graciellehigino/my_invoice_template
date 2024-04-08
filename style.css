@@ -1,0 +1,33 @@
+body {
+    font-family: Chivo, sans-serif;
+}
+
+.container {
+    width: 100%;
+    max-width: 8.5in; /* US letter width */
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.logo {
+    position: absolute; /* Position absolutely within the container */
+    top: 5px; /* Adjust top position as needed */
+    left: 5px; /* Adjust left position as needed */
+    width: 80px; /* Adjust width as needed */
+    height: auto; /* Maintain aspect ratio */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid #000;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #ced6d4;
+}
