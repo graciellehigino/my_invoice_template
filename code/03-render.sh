@@ -1,0 +1,1 @@
+quarto render invoice.qmd --execute-params

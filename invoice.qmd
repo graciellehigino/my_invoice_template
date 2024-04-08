@@ -1,0 +1,102 @@
+---
+title: |
+  ![](images/logo.png){width=80px}  
+  Invoice
+format:
+  pdf:
+    include-in-header:
+      text: |
+        \addtokomafont{disposition}{\rmfamily}
+execute: 
+  echo: TRUE
+  warning: FALSE
+  error: FALSE
+  message: FALSE
+  include: TRUE
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(tidyverse)
+library(showtext)
+options(tinytex.verbose = TRUE)
+source("01-data_wrangling.R")
+source("02-create_table.R")
+```
+
+
+:::: {layout-ncol="2"}
+:::{}
+
+
+## BILLED TO
+
+`r customer_data$customer_name`  
+<br>
+
+`r customer_data$customer_street_address`   
+<br>
+
+`r customer_data$customer_city` - `r customer_data$customer_province`  
+<br>
+
+`r customer_data$customer_country`  
+<br>
+
+`r customer_data$customer_zip`  
+<br>
+
+`r customer_data$customer_email`  
+
+
+:::
+
+:::{}
+
+Invoice \# `r paste0(format(Sys.Date(), "%Y"), "-", unique(service_data$service_data$invoice_id))`  
+<br>
+
+Date: `r Sys.Date()`  
+:::
+
+::::
+
+```{r invoice, echo=FALSE}
+invoice_table
+```
+
+::: {.callout-tip appearance="minimal"}  
+
+**TOTAL: `r service_data$total_invoice_amount` **  
+
+:::
+
+
+**Thank you!**
+<br><br><br>
+
+
+:::: {layout-ncol="2"}  
+:::{}  
+
+### PAYMENT INFORMATION
+
+Bank Awesome   
+<br>
+Account Name: Your Name   
+<br>
+Account Number: XXXXX-XX   
+<br>
+Branch Number: XXX   
+<br>
+Due Date: `r Sys.Date() + 30`
+:::
+
+:::{}
+Your Name  
+<br>
+Your Address   
+
+:::
+
+:::: 
